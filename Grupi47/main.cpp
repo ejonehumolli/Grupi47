@@ -91,5 +91,60 @@ cout << " " << destinationName(people[i].chosenDestinations[j])
 }
 }
 }
+Commit 1
 
+int main() {
+const int MAX_PEOPLE = 4;
+Person people[MAX_PEOPLE];
+int numPeople;
+
+cout << "Enter number of people (max 4): ";
+cin >> numPeople;
+
+Commit 2
+
+
+for (int i = 0; i < numPeople; i++) {
+cout << "\nEnter name of person " << i+1 << ": ";
+cin >> people[i].name;
+
+cout << "How many destinations to choose (max 5)? ";
+cin >> people[i].numChosen;
+
+showDestinations();
+
+for (int j = 0; j < people[i].numChosen; j++) {
+char choice;
+cout << "Enter initial of destination " << j+1 << ": ";
+cin >> choice;
+if (choice >= 'a' && choice <= 'z') choice -= 32;
+people[i].chosenDestinations[j] = choice;
+
+int d;
+cout << "Number of days for " << destinationName(choice) << ": ";
+cin >> d;
+people[i].days[j] = d;
+
+showTransport();
+char t;
+cout << "Choose transport: ";
+cin >> t;
+if (t >= 'a' && t <= 'z') t -= 32;
+people[i].transport[j] = t;
+
+showPriority();
+char p;
+cout << "Set priority: ";
+cin >> p;
+if (p >= 'a' && p <= 'z') p -= 32;
+people[i].priority[j] = p;
+
+cout << endl;
+}
+}
+
+displayItineraries(people, numPeople);
+
+return 0;
+}
 }
