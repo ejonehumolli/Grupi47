@@ -57,5 +57,39 @@ case 'T': return "Tokyo";
 default: return "Unknown";
 }
 }
+Commit 1
+
+string transportName(char c) {
+switch(c) {
+case 'F': return "Flight";
+case 'T': return "Train";
+case 'B': return "Bus";
+default: return "Unknown";
+}
+}
+
+string priorityName(char c) {
+switch(c) {
+case 'H': return "High";
+case 'M': return "Medium";
+case 'L': return "Low";
+default: return "Unknown";
+}
+}
+
+Commit 2
+
+void displayItineraries(Person people[], int numPeople) {
+cout << "\n--- Travel Itineraries ---\n";
+for (int i = 0; i < numPeople; i++) {
+cout << people[i].name << ":\n";
+for (int j = 0; j < people[i].numChosen; j++) {
+cout << " " << destinationName(people[i].chosenDestinations[j])
+<< " - " << people[i].days[j] << " days"
+<< ", " << transportName(people[i].transport[j])
+<< ", Priority: " << priorityName(people[i].priority[j]) << endl;
+}
+}
+}
 
 }
