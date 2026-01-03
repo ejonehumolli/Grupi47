@@ -25,5 +25,37 @@ void showDestinations() {
 	cout << "P-Paris\n";
 	cout << "R-Rome\n";
 	cout << "T-Tokyo\n";
+    
+
+	Commit 1
+
+// Show travel modes
+void showTransport() {
+cout << "Transport modes:\n";
+cout << "F - Flight\n";
+cout << "T - Train\n";
+cout << "B - Bus\n";
+}
+
+// Show priority options
+void showPriority() {
+cout << "Priority:\n";
+cout << "H - High\n";
+cout << "M - Medium\n";
+cout << "L - Low\n";
+}
+
+Commit 2
+
+string destinationName(char c) {
+switch(c) {
+case 'N': return "New York";
+case 'L': return "London";
+case 'P': return "Paris";
+case 'R': return "Rome";
+case 'T': return "Tokyo";
+default: return "Unknown";
+}
+}
 
 }
